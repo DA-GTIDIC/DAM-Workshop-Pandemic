@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DAM-ROL-GAME</string>
+    <string name="roll">Roll</string>
+    <string name="game_dice">Game Dice</string>
+</resources>
