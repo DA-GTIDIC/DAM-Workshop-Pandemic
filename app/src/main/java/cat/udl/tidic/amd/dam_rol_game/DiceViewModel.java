@@ -10,10 +10,14 @@ import cat.udl.tidic.amd.dam_rol_game.R;
 public class DiceViewModel extends ViewModel {
 
     public MutableLiveData<Integer> imageRes;
+
+    private int diceValue;
+
     private Random rnd;
 
 
     public DiceViewModel(){
+        diceValue = 0;
         imageRes = new MutableLiveData<Integer>();
         rnd = new Random();
     }
@@ -21,6 +25,7 @@ public class DiceViewModel extends ViewModel {
     void roll(){
 
         int cValue = rnd.nextInt(6) + 1;
+        diceValue = cValue;
         imageRes.setValue(getDiceResource(cValue));
 
     }
@@ -42,6 +47,10 @@ public class DiceViewModel extends ViewModel {
             default:
                 return -1;
         }
+    }
+
+    public int getDiceValue(){
+        return diceValue;
     }
 
 

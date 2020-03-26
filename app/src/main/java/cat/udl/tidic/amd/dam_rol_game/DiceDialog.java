@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
@@ -25,18 +26,19 @@ public class DiceDialog extends DialogFragment {
     private DiceViewModel diceViewModel;
     private MainActivity activity;
 
-    ImageView dice_picture;     //reference to dice picture
-    Handler handler;            //Post message to start roll
-    Timer timer=new Timer();    //Used to implement feedback to user
-    boolean rolling=false;      //Is die rolling?
-    RotateAnimation rotate;
+    private ImageView dice_picture;
+    private Handler handler;
+    private Timer timer=new Timer();
+    private boolean rolling=false;
+    private RotateAnimation rotate;
 
 
-    public static DiceDialog newInstance(MainActivity activity) {
+    static DiceDialog newInstance(MainActivity activity) {
         DiceDialog dialog = new DiceDialog();
         dialog.activity = activity;
         return dialog;
     }
+
 
 
     @NonNull
@@ -46,32 +48,32 @@ public class DiceDialog extends DialogFragment {
         AlertDialog alertDialog = new AlertDialog.Builder(getContext())
                 .setView(rootView)
                 .setCancelable(true)
-                .setMessage("Clickar al dau per tirar:")
-                .setPositiveButton("close", null)
+                .setMessage(R.string.start_dice)
+                .setPositiveButton(R.string.close, null)
                 .create();
         alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setOnShowListener(dialog -> {
+            onDialogShow(alertDialog);
+        });
         return alertDialog;
 
     }
 
-    public void initView(){
+
+    private void initView(){
 
         diceViewModel = new DiceViewModel();
 
         rootView = LayoutInflater.from(getContext())
                 .inflate(R.layout.dice, null, false);
 
-
-        //Get a reference to image widget
-        dice_picture = (ImageView) rootView.findViewById(R.id.imageView);
-        dice_picture.setOnClickListener(new HandleClick());
-        rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        rotate.setDuration(3000);
-        rotate.setInterpolator(new LinearInterpolator());
+        // Init the dice animation
+        configAnimation();
 
         //link handler to callback
         handler=new Handler(callback);
 
+        // Observe the live data, once the dice is rolled to change the view
         diceViewModel.imageRes.observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer value) {
@@ -81,7 +83,17 @@ public class DiceDialog extends DialogFragment {
 
     }
 
-    //User pressed dice, lets start
+    private void configAnimation(){
+        dice_picture = (ImageView) rootView.findViewById(R.id.imageView);
+        dice_picture.setOnClickListener(new HandleClick());
+        rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF,
+                0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotate.setDuration(3000);
+        rotate.setInterpolator(new LinearInterpolator());
+    }
+
+
+
     private class HandleClick implements View.OnClickListener {
         public void onClick(View arg0) {
             if (!rolling) {
@@ -101,8 +113,8 @@ public class DiceDialog extends DialogFragment {
     }
 
 
-    Handler.Callback callback = new Handler.Callback() {
-        public boolean handleMessage(Message msg) {
+    private Handler.Callback callback = new Handler.Callback() {
+        public boolean handleMessage(@NonNull Message msg) {
             diceViewModel.roll();
             rolling=false;
             rotate.cancel();
@@ -110,15 +122,21 @@ public class DiceDialog extends DialogFragment {
         }
     };
 
-
-    //Clean up
-    public void onPause() {
-        super.onPause();
+    private void onDialogShow(AlertDialog dialog) {
+        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        positiveButton.setOnClickListener(v -> {
+            onDoneClicked();
+        });
     }
 
-    public void onDestroy() {
-        super.onDestroy();
-        timer.cancel();
+    private void onDoneClicked() {
+
+        int diceVal = diceViewModel.getDiceValue();
+
+        if (diceVal > 0 &&  diceVal <= 6 ) {
+            activity.setEvent(diceVal);
+            dismiss();
+        }
     }
 
 }
