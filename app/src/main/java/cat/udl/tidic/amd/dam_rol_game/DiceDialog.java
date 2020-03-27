@@ -2,7 +2,6 @@ package cat.udl.tidic.amd.dam_rol_game;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
