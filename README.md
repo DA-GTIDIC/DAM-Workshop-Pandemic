@@ -1,4 +1,4 @@
-# DAM-ROL-GAME
+# DAM-Workshop-Pandemic
 Workshop to have fun and learn to implement a simple dice roll game.
 
 Course: Development of Mobile Applications (DAM)
