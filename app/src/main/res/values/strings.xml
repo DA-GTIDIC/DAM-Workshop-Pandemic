@@ -8,27 +8,17 @@
     <string name="start_dice">Click the dice to roll:</string>
     <string name="game_dialog_title">New Game</string>
 
-    <string name="EMPIEZA">Nunca es tarde. Actuar ahora es mejor que mañna, pero siempre hubiera
-    sido mejor haber actuado antes. Estamos en una situación critica en la que, en los próximos
-    días, nuestro pueblo va a sufrir como nunca. Alea iacta est!</string>
+    <string name="BEGINS">It\'s never too late. Acting now is better than tomorrow, but there would always be It was better to have acted before. We are in a critical situation in which, in the next days, our people will suffer like never before. Alea iacta est!</string>
 
-    <string name="REPARTO">El gobierno ha podido mandar un cargo de material sanitario sobrevolando
-        la poblacion (baja la poblacion infectada un 1-5%)</string>
-    <string name="VACUNAS">Una cura milagrosa, pero limitada ha sido enviada a las casas de los
-        habitantes, puede que salgamos de esta (baja la población infectada un 10-20%)</string>
-    <string name="ENCASA">La Gente se ha quedado en casa! Increíble, todo el conjunto de habitantes
-        ha sido capaz de escuchar unas instrucciones sencillas y fáciles de seguir por un día!
-        (baja la población infectada 5%)</string>
-    <string name="FUERACASA">Como no, alguien tenía que sacar a pasear al perro por séptima vez,
-        ha posibilitado la propagación del virus a sus convecinos. (% de infectados aumenta un 5%)</string>
-    <string name="CEPAMUTADA">Parece que una cepa aún peor del temible CruzcampoVirus
-        ha sido descubierta hoy, y afecta a tu querido pueblo, es mucho peor que la cepa normal,
-        pero tan solo dura un día (% de infectados aumenta un 15%)</string>
-    <string name="INCONSIENCIA"> El pueblo parece pensar, a pesar de todas las pruebas indicando
-        lo contrario, que lo peor ya ha pasado. Así que no parece tan mala idea ir al
-        bar a echar un domino....(% de infectados aumenta un 10%)</string>
-    <string name="game_name">Cruzcampo Virus</string>
-    <string name="days_to_surive">Days to surive</string>
+    <string name="MEDICINES">The government has been able to send a charge of medical supplies flying over.</string>
+    <string name="VACCINES">A miraculous, but limited cure has been sent to the homes of the
+         inhabitants, we may get out of this</string>
+    <string name="LOCKUP">People have stayed home! Incredible, the whole set of inhabitants. You have been able to hear simple and easy to follow instructions for a day!</string>
+    <string name="PEOPLE_OUT">Of course, someone had to take the dog for a walk for the seventh time,has made it possible for the virus to spread to its neighbors.</string>
+    <string name="MUTATION">It seems like an even worse strain of the fearsome PandemicVirus It has been discovered today, and it affects your dear people, it is much worse than the normal strain, but it only lasts a day </string>
+    <string name="UNCONSCIOUSNESS"> The people seem to think, despite all the evidence indicating on the contrary, that the worst is over. So it doesn\'t seem like such a bad idea to go to bar to take a beer ....</string>
+    <string name="game_name">Pandemic</string>
+    <string name="days_to_survive">Days to survive</string>
     <string name="start_infection_rate">Start Infection Rate(%)</string>
 
 </resources>

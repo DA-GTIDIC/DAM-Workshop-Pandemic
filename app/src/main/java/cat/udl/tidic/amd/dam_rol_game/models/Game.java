@@ -1,6 +1,5 @@
 package cat.udl.tidic.amd.dam_rol_game.models;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
 public class Game {
@@ -43,7 +42,7 @@ public class Game {
 
         Events cEvent = parseDiceToEvent(diceValue);
         roundEvent.setValue(cEvent);
-        int cValue = Events.getEventDamage(cEvent != null ? cEvent : Events.INCONSIENCIA);
+        int cValue = Events.getEventDamage(cEvent != null ? cEvent : Events.UNCONSCIOUSNESS);
         int cSurvival = 0;
 
         if (infection.getValue() != null){
@@ -74,17 +73,17 @@ public class Game {
         
         switch (diceValue){
             case 1:
-                return Events.REPARTO;
+                return Events.MEDICINES;
             case 2:
-                return Events.VACUNAS;
+                return Events.VACCINES;
             case 3:
-                return Events.ENCASA;
+                return Events.LOCKUP;
             case 4:
-                return Events.FUERACASA;
+                return Events.PEOPLE_OUT;
             case 5:
-                return Events.CEPAMUTADA;
+                return Events.MUTATION;
             case 6:
-                return Events.INCONSIENCIA;
+                return Events.UNCONSCIOUSNESS;
             default:
                 return null;
         }

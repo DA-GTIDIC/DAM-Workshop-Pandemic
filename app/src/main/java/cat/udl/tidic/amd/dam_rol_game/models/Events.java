@@ -5,12 +5,12 @@ import java.util.Random;
 import cat.udl.tidic.amd.dam_rol_game.R;
 
 public enum Events {
-    REPARTO,
-    VACUNAS,
-    ENCASA,
-    FUERACASA,
-    CEPAMUTADA,
-    INCONSIENCIA;
+    MEDICINES,
+    VACCINES,
+    LOCKUP,
+    PEOPLE_OUT,
+    MUTATION,
+    UNCONSCIOUSNESS;
 
     public static Events getRandomEvent() {
         Random random = new Random();
@@ -21,18 +21,18 @@ public enum Events {
 
         switch(e){
 
-            case REPARTO:
-                return R.string.REPARTO;
-            case ENCASA:
-                return R.string.ENCASA;
-            case VACUNAS:
-                return R.string.VACUNAS;
-            case FUERACASA:
-                return R.string.FUERACASA;
-            case CEPAMUTADA:
-                return R.string.CEPAMUTADA;
-            case INCONSIENCIA:
-                return R.string.INCONSIENCIA;
+            case MEDICINES:
+                return R.string.MEDICINES;
+            case LOCKUP:
+                return R.string.LOCKUP;
+            case VACCINES:
+                return R.string.VACCINES;
+            case PEOPLE_OUT:
+                return R.string.PEOPLE_OUT;
+            case MUTATION:
+                return R.string.MUTATION;
+            case UNCONSCIOUSNESS:
+                return R.string.UNCONSCIOUSNESS;
             default:
                 return -1;
         }
@@ -43,18 +43,18 @@ public enum Events {
 
         switch(e){
 
-            case REPARTO:
-                return R.drawable.reparto;
-            case ENCASA:
-                return R.drawable.casa;
-            case VACUNAS:
-                return R.drawable.vacunas;
-            case FUERACASA:
-                return R.drawable.fuera;
-            case CEPAMUTADA:
-                return R.drawable.cepa;
-            case INCONSIENCIA:
-                return R.drawable.inconcienca;
+            case MEDICINES:
+                return R.drawable.medicines;
+            case LOCKUP:
+                return R.drawable.lockup;
+            case VACCINES:
+                return R.drawable.vaccines;
+            case PEOPLE_OUT:
+                return R.drawable.people_out;
+            case MUTATION:
+                return R.drawable.mutation;
+            case UNCONSCIOUSNESS:
+                return R.drawable.unconsiousness;
             default:
                 return -1;
         }
@@ -66,17 +66,17 @@ public enum Events {
 
         switch(e){
 
-            case REPARTO:
+            case MEDICINES:
                 return -(random.nextInt((5 - 1) +1 ) + 1);
-            case ENCASA:
+            case LOCKUP:
                 return -5;
-            case VACUNAS:
+            case VACCINES:
                 return -(random.nextInt((20 - 10) +1 ) + 10);
-            case FUERACASA:
+            case PEOPLE_OUT:
                 return 15;
-            case CEPAMUTADA:
+            case MUTATION:
                 return 25;
-            case INCONSIENCIA:
+            case UNCONSCIOUSNESS:
                 return (random.nextInt((70 - 60) +1 ) + 60);
             default:
                 return -1;

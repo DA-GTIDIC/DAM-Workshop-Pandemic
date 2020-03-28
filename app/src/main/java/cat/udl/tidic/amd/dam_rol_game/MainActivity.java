@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startGame(int days, int survival_rate){
         gameViewModel = new GameViewModel(days, survival_rate);
-        eventTextView.setText(getText(R.string.EMPIEZA));
+        eventTextView.setText(getText(R.string.BEGINS));
         cardImageView.setImageResource(R.drawable.virus);
         gameProgress.setCurrentProgress(0);
 
