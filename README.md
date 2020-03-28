@@ -20,10 +20,12 @@ Android Project using Java. Workshop to learn Dialogs, MVVM and Dice Animation.
 
 ## Screenshots
 
+![rol-game](https://user-images.githubusercontent.com/61190134/77830249-9115a700-7127-11ea-8227-d23111b06927.png)
+
 ## Participants taking the course
 ![participant-01](https://user-images.githubusercontent.com/61190134/77829008-79d2bb80-711f-11ea-9d59-d9652c80aa71.jpg)
 
 ## Material
-* [Slides](https://github.com/JordiMateoUdL/Development-of-Mobile-Applications/blob/master/sources/slides/AMD_vl10.pdf)
+* [Slides](https://github.com/JordiMateoUdL/Development-of-Mobile-Applications/blob/master/sources/workshops/pandemic/pandemic.pdf)
 * [Mark down](https://github.com/JordiMateoUdL/Development-of-Mobile-Applications/blob/master/sources/course/vl10.md)
-* [Resources](https://github.com/JordiMateoUdL/Development-of-Mobile-Applications/tree/master/sources/slides/material%20AMD__vl010)
+
