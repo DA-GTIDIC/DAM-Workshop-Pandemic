@@ -18,9 +18,10 @@ Course: Development of Mobile Applications (DAM)
 
 Android Project using Java. Workshop to learn Dialogs, MVVM and Dice Animation.
 
-## Design
+## Screenshots
 
-![handOn-SP](https://user-images.githubusercontent.com/61190134/77188183-e7566a80-6ad5-11ea-92e7-3b0470111b55.png)
+## Participants taking the course
+![participant-01](https://user-images.githubusercontent.com/61190134/77829008-79d2bb80-711f-11ea-9d59-d9652c80aa71.jpg)
 
 ## Material
 * [Slides](https://github.com/JordiMateoUdL/Development-of-Mobile-Applications/blob/master/sources/slides/AMD_vl10.pdf)
